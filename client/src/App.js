@@ -4,7 +4,7 @@ import {DragDropContext, Droppable} from 'react-beautiful-dnd';
 import Column from './components/Column.jsx';
 import Header from './components/Header.jsx';
 import axios from 'axios';
-
+import AddColumn from './components/AddColumn.js';
 
 /* random image */
 const imageUrl = 'https://source.unsplash.com/random/?people/';
@@ -99,7 +99,8 @@ function App() {
     
 
     
-    const [columns, setColumns] = useState(columnsFromServer);
+    const [columns, setColumns] = useState({});
+    const [toggle, setToggle] = useState(false)
     useEffect(() => {
         const col = {
 
@@ -179,17 +180,21 @@ function App() {
           });
     }
 
-    function addColumn(){
+    function addColumn(name){
         
         const data = {
             id: uuid(),
-            category: "todo",
+            category: name,
             tasks:[]
         }
         
         axios.post("/exercises/add", data)
         .then(res => console.log(res.data))
-    
+        setToggle(false)
+    }
+
+    function toggleAdd() {
+        setToggle(!toggle)
     }
     
     return (
@@ -219,7 +224,8 @@ function App() {
                 })}
             </DragDropContext>
         </div>
-        <button onClick={addColumn}>Add</button>
+        <button onClick={toggleAdd}>Add</button>
+            {toggle ? <AddColumn addColumn={addColumn} toggleAdd={toggleAdd}></AddColumn> : null}
         </div>
     )
 }
