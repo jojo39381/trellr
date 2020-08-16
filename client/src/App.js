@@ -100,31 +100,31 @@ function App() {
 
     
     const [columns, setColumns] = useState(columnsFromServer);
-    // useEffect(() => {
-    //     const col = {
+    useEffect(() => {
+        const col = {
 
-    //     }
-    //     axios.get("/exercises")
-    //     .then(response => {
-    //         console.log(response.data.length)
-    //         if (response.data.length > 0) {
-    //              response.data.forEach((task) => {
-    //                 col[task.id] = {
-    //                     name : task.category,
-    //                     items: task.tasks
-    //                 }
+        }
+        axios.get("/exercises")
+        .then(response => {
+            console.log(response.data.length)
+            if (response.data.length > 0) {
+                 response.data.forEach((task) => {
+                    col[task.id] = {
+                        name : task.category,
+                        items: task.tasks
+                    }
                     
                      
     
-    //             }
-    //             )
-    //         }
+                }
+                )
+            }
 
-    //         setColumns(col)
-    //     })
+            setColumns(col)
+        })
 
         
-    //   },[]);
+      },[]);
         
     
       
