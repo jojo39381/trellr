@@ -43,7 +43,7 @@ const columnsFromServer =
 
 
 
-    
+
 /* columns from the server, currently hard coded. */
 
 
@@ -83,6 +83,9 @@ const dragEnd = (result, columns, setColumns) => {
       }
     });
     }
+    axios.post('/exercises/update/' + result.destination, columns)
+        .then(res => console.log(res.data)) 
+        
 };
 
 
