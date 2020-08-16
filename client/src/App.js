@@ -8,24 +8,9 @@ import AddColumn from './components/AddColumn.js';
 
 /* random image */
 const imageUrl = 'https://source.unsplash.com/random/?people/';
-var months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
-           "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
 
-function getRandomHardDate() {
-     
-    return months[Math.floor(Math.random() * 12)] + ' ' + Math.floor(Math.random() * 30 + 2)
-    
-}
 
-const backlog = [
-    {id: uuid(), content: 'Final QA', assigned:imageUrl + uuid(), date: getRandomHardDate(), color: getRandomColor()},
-    {id: uuid(), content: 'Forms submit data properly', assigned:imageUrl + uuid(), date: getRandomHardDate(), color: getRandomColor()},
-    {id: uuid(), content: 'Links across pages', assigned:imageUrl + uuid(), date: getRandomHardDate(), color: getRandomColor()}
-]
-const todo = [
-    {id: uuid(), content: 'Do Homework', assigned:imageUrl + uuid(), date: getRandomHardDate(), color: getRandomColor()},
-    {id: uuid(), content: "Finish Important Project for boss", assigned:imageUrl + uuid(), date: getRandomHardDate(), color: getRandomColor()}
-]
+
 
 function getRandomColor() {
    
