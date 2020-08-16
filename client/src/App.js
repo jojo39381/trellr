@@ -208,9 +208,9 @@ function App() {
         
         <div>
         <Header>
-        
+            
         </Header>
-        
+        <button onClick={toggleAdd}>Add</button>
         <div style={{ display: 'flex', justifyContent: 'center', height: '100%'}}>
             <DragDropContext onDragEnd={result => dragEnd(result, columns, setColumns)}>
                 {Object.entries(columns).map(([id, column]) => {
@@ -233,7 +233,7 @@ function App() {
                 })}
             </DragDropContext>
         </div>
-        <button onClick={toggleAdd}>Add</button>
+        
             {toggle ? <AddColumn addColumn={addColumn} toggleAdd={toggleAdd}></AddColumn> : null}
         </div>
     )
