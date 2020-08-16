@@ -20,11 +20,11 @@ function getRandomColor() {
 const columnsFromServer = 
     {   [uuid()] : {
             name: 'Backlog',
-            items: backlog
+            items: []
         },
         [uuid()]: {
             name: 'Ready To Do',
-            items: todo
+            items: []
         },
         [uuid()]: {
             name: 'In Progress',
