@@ -69,6 +69,17 @@ const dragEnd = (result, columns, setColumns) => {
                 items: destItems
             }
         })
+        const destinationColumn = {
+            tasks:destItems
+        }
+        const sourceColumn = {
+            tasks:sourceItems
+        }
+        axios.post('/exercises/update/' + result.destination, destinationColumn)
+        .then(res => console.log(res.data)) 
+        axios.post('/exercises/update/' + result.source, sourceColumn)
+        .then(res => console.log(res.data)) 
+
     }
     else {
     const column = columns[source.droppableId];
@@ -83,9 +94,7 @@ const dragEnd = (result, columns, setColumns) => {
       }
     });
     }
-    axios.post('/exercises/update/' + result.destination, columns)
-        .then(res => console.log(res.data)) 
-        
+   
 };
 
 
@@ -122,8 +131,7 @@ function App() {
 
         
       },[]);
-        
-    
+   
       
     
     
@@ -142,13 +150,15 @@ function App() {
         updated.push(object)
 
             
+        
+        }
+
         const serverColumn = {
 
             tasks:updated
         }
         axios.post('/exercises/update/' + destination, serverColumn)
         .then(res => console.log(res.data)) 
-        }
         
         
 
