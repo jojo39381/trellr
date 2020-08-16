@@ -194,7 +194,7 @@ function App() {
             ...columns,
             [uuid()]: {
               name: name,
-              items: updated
+              items: []
             }
           });
         setToggle(false)
@@ -207,7 +207,9 @@ function App() {
     return (
         
         <div>
-        <Header></Header>
+        <Header>
+        
+        </Header>
         
         <div style={{ display: 'flex', justifyContent: 'center', height: '100%'}}>
             <DragDropContext onDragEnd={result => dragEnd(result, columns, setColumns)}>
