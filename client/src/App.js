@@ -190,6 +190,13 @@ function App() {
         
         axios.post("/exercises/add", data)
         .then(res => console.log(res.data))
+        setColumns({
+            ...columns,
+            [uuid()]: {
+              name: name,
+              items: updated
+            }
+          });
         setToggle(false)
     }
 
