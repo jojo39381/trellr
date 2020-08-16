@@ -175,7 +175,7 @@ function App() {
             ...columns,
             [destination]: {
               ...column,
-              items: updated
+              items: []
             }
           });
     }
