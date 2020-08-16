@@ -187,9 +187,15 @@ function App() {
             ...columns,
             [destination]: {
               ...column,
-              items: []
+              items: updated
             }
           });
+
+        const serverColumn = {
+            tasks: updated
+        }
+          axios.post('/exercises/update/' + destination, serverColumn)
+        .then(res => console.log(res.data)) 
     }
 
     function addColumn(name){
