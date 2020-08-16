@@ -210,7 +210,7 @@ function App() {
         <Header>
             
         </Header>
-        <button onClick={toggleAdd}>Add</button>
+        <button onClick={toggleAdd} style={{width:"100px", height:"50px", margin:"20px"}}>Add</button>
         <div style={{ display: 'flex', justifyContent: 'center', height: '100%'}}>
             <DragDropContext onDragEnd={result => dragEnd(result, columns, setColumns)}>
                 {Object.entries(columns).map(([id, column]) => {
