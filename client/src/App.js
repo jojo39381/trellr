@@ -69,15 +69,15 @@ const dragEnd = (result, columns, setColumns) => {
                 items: destItems
             }
         })
-        const destinationColumn = {
+        const savedDestination = {
             tasks:destItems
         }
-        const sourceColumn = {
+        const savedSource = {
             tasks:sourceItems
         }
-        axios.post('/exercises/update/' + result.destination, destinationColumn)
+        axios.post('/exercises/update/' + result.destination, savedDestination)
         .then(res => console.log(res.data)) 
-        axios.post('/exercises/update/' + result.source, sourceColumn)
+        axios.post('/exercises/update/' + result.source, savedSource)
         .then(res => console.log(res.data)) 
 
     }
