@@ -94,6 +94,11 @@ const dragEnd = (result, columns, setColumns) => {
         items: copy
       }
     });
+    const savedSource = {
+        tasks:copy
+    }
+    axios.post('/exercises/update/' + result.source.droppableId, savedSource)
+        .then(res => console.log(res.data)) 
     }
    
 };
