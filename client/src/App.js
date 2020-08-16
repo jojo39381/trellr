@@ -75,6 +75,7 @@ const dragEnd = (result, columns, setColumns) => {
         const savedSource = {
             tasks:sourceItems
         }
+        console.log("success")
         axios.post('/exercises/update/' + result.destination, savedDestination)
         .then(res => console.log(res.data)) 
         axios.post('/exercises/update/' + result.source, savedSource)
