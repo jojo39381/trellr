@@ -136,6 +136,11 @@ function App() {
         axios.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyA-bhkcpYuV5V8r-HtcQq6tE0saL-j93ko")
         .then(response => {
            
+
+
+
+
+            
             axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + response.location.lat + "&lon=" + response.location.lng + "&units=imperial&exclude=minutely,hourly,daily&appid=da9df0aa55c4c2692212c2669fa3e530")
             .then(response => {
                 setWeather({
