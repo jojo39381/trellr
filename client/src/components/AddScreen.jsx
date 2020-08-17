@@ -16,14 +16,14 @@ function AddScreen(prop) {
   useEffect(() => {
   
     if (url) {
-      console.log(url)
+      
       setTask(prevNote => {
         return {
           ...prevNote,
           image: url
         }
       })
-
+      console.log(task)
       prop.addTask(prop.id, null, task)
     }
   }, [url])
