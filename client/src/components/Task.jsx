@@ -18,7 +18,7 @@ function Task(prop) {
         {...prop.provided.draggableProps}
         {...prop.provided.dragHandleProps}
         style={{
-            position:"absolute",
+           
             usereSelect: 'none',
             padding: 16,
             margin: '0 0 8px 0',
