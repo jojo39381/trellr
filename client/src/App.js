@@ -136,7 +136,7 @@ function App() {
         navigator.geolocation.getCurrentPosition(function(position) {
             console.log("Latitude is :", position.coords.latitude);
             console.log("Longitude is :", position.coords.longitude);
-            axios.get("https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=minutely,hourly,daily&appid=da9df0aa55c4c2692212c2669fa3e530")
+            axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&exclude=minutely,hourly,daily&appid=da9df0aa55c4c2692212c2669fa3e530")
         .then(response => {
             console.log(response.data)
             
