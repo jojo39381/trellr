@@ -136,13 +136,17 @@ function App() {
         navigator.geolocation.getCurrentPosition(function(position) {
             console.log("Latitude is :", position.coords.latitude);
             console.log("Longitude is :", position.coords.longitude);
-          }, () => getWeather);
+            axios.get("https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=minutely,hourly,daily&appid=da9df0aa55c4c2692212c2669fa3e530")
+        .then(response => {
+            console.log(response.data.)
+            
+        })
+            
+          });
        
     }, [columns])
 
-    function getWeather() {
-        console.log("weather")
-    }
+   
     
     /* add to column the new task or update it */
     function addToColumn(destination, id, task) {
