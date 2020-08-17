@@ -14,8 +14,9 @@ function AddScreen(prop) {
 
  const [url,setUrl] = useState("")
   useEffect(() => {
-    console.log(task)
+  
     if (url) {
+      console.log(url)
       setTask(prevNote => {
         return {
           ...prevNote,
