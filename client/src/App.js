@@ -248,7 +248,6 @@ function App() {
         <div style={{ display: 'flex', justifyContent: 'center', height: '100%'}}>
             <DragDropContext onDragEnd={result => dragEnd(result, columns, setColumns)}>
                 {Object.entries(columns).map(([id, column]) => {
-                    
                     return (
                         
                         <div style={{display:'flex', flexDirection: 'column', alignItems: 'center'}} key={uuid()}>
