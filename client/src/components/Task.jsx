@@ -28,7 +28,7 @@ function Task(prop) {
             ...prop.provided.draggableProps.style
         }} onClick={toggleEdit}>
         <div className='color-bar' style={{backgroundColor:prop.color}}></div>
-            <h3 style={{position:"relative"}}>{prop.item.content}</h3>
+            <h3 style={{width:"250px"}}>{prop.item.content}</h3>
 
            
             <User img={prop.item.assigned} date={prop.item.date}></User>
