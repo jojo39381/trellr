@@ -100,7 +100,12 @@ function App() {
     
     const [columns, setColumns] = useState(columnsFromServer);
     const [toggle, setToggle] = useState(false)
+    const [location, setLocation] = useState({
+        latitude:"",
+        longitude:""
+    })
     useEffect(() => {
+        
         const col = {
 
         }
@@ -126,8 +131,18 @@ function App() {
         
       },[]);
    
-      
-    
+    useEffect(() => {
+        console.log("asd")
+        navigator.geolocation.getCurrentPosition(function(position) {
+            console.log("Latitude is :", position.coords.latitude);
+            console.log("Longitude is :", position.coords.longitude);
+          }, getWeather);
+       
+    }, [columns])
+
+    function getWeather() {
+        console.log("weather")
+    }
     
     /* add to column the new task or update it */
     function addToColumn(destination, id, task) {
@@ -221,7 +236,8 @@ function App() {
         <Header>
             
         </Header>
-        <button onClick={toggleAdd} style={{width:"100px", height:"50px", margin:"20px"}}>Add</button>
+        <button onClick={toggleAdd} style={{width:"100px", height:"50px", margin:"20px", float:"left"}}>Add</button>
+        <h1  style={{width:"100px", height:"50px", margin:"20px", float:"right"}}>Weather</h1>
         <div style={{ display: 'flex', justifyContent: 'center', height: '100%'}}>
             <DragDropContext onDragEnd={result => dragEnd(result, columns, setColumns)}>
                 {Object.entries(columns).map(([id, column]) => {
