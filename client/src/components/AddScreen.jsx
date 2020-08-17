@@ -3,6 +3,16 @@ import React, {useState, useEffect} from 'react';
 
 function AddScreen(prop) {
 
+  const [task, setTask] = useState({
+    title: "",
+    date: "",
+    image: ""
+  });
+
+ const [image,setImage] = useState("")
+
+
+ const [url,setUrl] = useState("")
   useEffect(() => {
     if (url) {
       setTask(prevNote => {
@@ -39,16 +49,7 @@ function AddScreen(prop) {
         
     }
 
-    const [task, setTask] = useState({
-        title: "",
-        date: "",
-        image: ""
-      });
     
-     const [image,setImage] = useState("")
-
-    
-     const [url,setUrl] = useState("")
       function handleChange(event) {
           
         const { name, value } = event.target;
@@ -80,9 +81,7 @@ function AddScreen(prop) {
                 <span>Uplaod Image</span>
                 <input type="file" onChange={(e)=>setImage(e.target.files[0])} />
             </div>
-            <div className="file-path-wrapper">
-                <input className="file-path validate" type="text" />
-            </div>
+            
             </div>
 
         <button style={{width: '30%', border:'none', backgroundColor:'#f1c40f', height: '30px', borderRadius:'2px'}} onClick={uploadImage}>Add</button>

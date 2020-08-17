@@ -146,7 +146,7 @@ function App() {
     
         const column = columns[destination]
         var updated = [...column.items]
-        const object = {id: uuid(), content: task.title, assigned:imageUrl + uuid(), date: task.date, color: getRandomColor() image: task.image}
+        const object = {id: uuid(), content: task.title, assigned:imageUrl + uuid(), date: task.date, color: getRandomColor(), image: task.image}
         if (id != null) {
             var index = updated.findIndex( x => x.id === id)   
             updated[index] = object
