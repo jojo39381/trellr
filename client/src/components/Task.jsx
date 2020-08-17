@@ -28,7 +28,7 @@ function Task(prop) {
             ...prop.provided.draggableProps.style
         }} onClick={toggleEdit}>
         <div className='color-bar' style={{backgroundColor:prop.color}}></div>
-            <h3 style={{backgroundColor:"red", height:"auto"}}>{prop.item.content}</h3>
+            <h3 style={{ height:"auto"}}>{prop.item.content}</h3>
             {!prop.item.image == "" ?
             <img src={prop.item.image} style={{height:"200px", width:"200px", position:"relative", display: "block",marginLeft: "auto", marginRight: "auto", backgroundSize:"cover", marginBottom:"20px"}}></img>:
             null
