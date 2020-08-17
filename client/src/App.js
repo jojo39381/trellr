@@ -133,7 +133,7 @@ function App() {
    
     useEffect(() => {
         console.log("asd")
-        $getJSON("https://ipinfo.io/geo")
+        fetch("https://ipinfo.io/geo")
         .then(response => {
             var loc = response.loc.split(',');
             var coords = {
