@@ -29,7 +29,7 @@ function Task(prop) {
         }} onClick={toggleEdit}>
         <div className='color-bar' style={{backgroundColor:prop.color}}></div>
             <h3 style={{backgroundColor:"red", height:"auto"}}>{prop.item.content}</h3>
-            <img src={imageUrl} style={{height:"200px", width:"200px", position:"relative", display: "block",marginLeft: "auto", marginRight: "auto", backgroundSize:"cover", marginBottom:"20px"}}></img>
+            <img src={prop.item.image} style={{height:"200px", width:"200px", position:"relative", display: "block",marginLeft: "auto", marginRight: "auto", backgroundSize:"cover", marginBottom:"20px"}}></img>
            
             <User img={prop.item.assigned} date={prop.item.date}></User>
             
