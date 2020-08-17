@@ -20,16 +20,16 @@ function AddScreen(prop) {
       setTask({
         ...task,
         image: url
-      }, addTask)
+      }, function() {
+        console.log("success")
+        prop.addTask(prop.id, null, task)
+      })
       console.log(task)
       
     }
   }, [url])
 
-    function addTask() {
-      console.log("added")
-      prop.addTask(prop.id, null, task)
-    }
+    
  
     function uploadImage() {
      
