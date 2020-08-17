@@ -17,11 +17,9 @@ function AddScreen(prop) {
   
     if (url) {
       
-      setTask(prevNote => {
-        return {
-          ...prevNote,
-          image: url
-        }
+      setTask({
+        ...task,
+        image: url
       }, addTask)
       console.log(task)
       
