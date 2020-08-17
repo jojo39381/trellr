@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 
 function AddScreen(prop) {
-
+  
   const [task, setTask] = useState({
     title: "",
     date: "",
@@ -28,6 +28,7 @@ function AddScreen(prop) {
 
 
     function uploadImage() {
+      console.log(image)
       const data = new FormData()
       data.append("file",image)
       data.append("upload_preset","instaclone")
