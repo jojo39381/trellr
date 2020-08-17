@@ -18,6 +18,7 @@ function Task(prop) {
         {...prop.provided.draggableProps}
         {...prop.provided.dragHandleProps}
         style={{
+            position:"absolute",
             usereSelect: 'none',
             padding: 16,
             margin: '0 0 8px 0',
@@ -27,7 +28,7 @@ function Task(prop) {
             ...prop.provided.draggableProps.style
         }} onClick={toggleEdit}>
         <div className='color-bar' style={{backgroundColor:prop.color}}></div>
-            <h3>{prop.item.content}</h3>
+            <h3 style={{position:"relative"}}>{prop.item.content}</h3>
 
            
             <User img={prop.item.assigned} date={prop.item.date}></User>
