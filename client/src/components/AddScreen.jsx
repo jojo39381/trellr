@@ -14,6 +14,7 @@ function AddScreen(prop) {
 
  const [url,setUrl] = useState("")
   useEffect(() => {
+    console.log(task)
     if (url) {
       setTask(prevNote => {
         return {
@@ -28,7 +29,7 @@ function AddScreen(prop) {
 
 
     function uploadImage() {
-      console.log(image)
+     
       const data = new FormData()
       data.append("file",image)
       data.append("upload_preset","instaclone")
