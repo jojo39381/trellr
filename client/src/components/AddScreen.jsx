@@ -17,10 +17,7 @@ function AddScreen(prop) {
   
     if (url) {
       
-      setTask({
-        ...task,
-        image: url
-      })
+      task.image = url
 
       addTask()
       
@@ -29,7 +26,7 @@ function AddScreen(prop) {
   }, [url])
 
     function addTask() {
-      console.log("added")
+      console.log(task)
       prop.addTask(prop.id, null, task)
     }
  
