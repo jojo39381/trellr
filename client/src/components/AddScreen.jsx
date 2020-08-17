@@ -47,8 +47,7 @@ function AddScreen(prop) {
           console.log(err)
       })
 
-        prop.addTask(prop.id, null, task)
-
+        
         
     }
 
