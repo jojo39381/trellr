@@ -29,6 +29,7 @@ function AddScreen(prop) {
   }, [url])
 
     function addTask() {
+      console.log("added")
       prop.addTask(prop.id, null, task)
     }
  
