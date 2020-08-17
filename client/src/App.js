@@ -100,9 +100,9 @@ function App() {
     
     const [columns, setColumns] = useState(columnsFromServer);
     const [toggle, setToggle] = useState(false)
-    const [location, setLocation] = useState({
-        latitude:"",
-        longitude:""
+    const [weather, setWeather] = useState({
+        temp:"",
+        weather:""
     })
     useEffect(() => {
         
@@ -136,9 +136,12 @@ function App() {
         navigator.geolocation.getCurrentPosition(function(position) {
             console.log("Latitude is :", position.coords.latitude);
             console.log("Longitude is :", position.coords.longitude);
-            axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&exclude=minutely,hourly,daily&appid=da9df0aa55c4c2692212c2669fa3e530")
+            axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&units=imperial&exclude=minutely,hourly,daily&appid=da9df0aa55c4c2692212c2669fa3e530")
         .then(response => {
-            console.log(response.data.current)
+            setWeather({
+                temp:response.data.current.temp,
+                weather:response.data.current.weather[0].main
+            })
             
         })
             
@@ -241,7 +244,7 @@ function App() {
             
         </Header>
         <button onClick={toggleAdd} style={{width:"100px", height:"50px", margin:"20px", float:"left"}}>Add</button>
-        <h1  style={{width:"100px", height:"50px", margin:"20px", float:"right"}}>Weather</h1>
+        <h1  style={{width:"100px", height:"50px", margin:"20px", float:"right"}}>{weather.temp}</h1>
         <div style={{ display: 'flex', justifyContent: 'center', height: '100%'}}>
             <DragDropContext onDragEnd={result => dragEnd(result, columns, setColumns)}>
                 {Object.entries(columns).map(([id, column]) => {
