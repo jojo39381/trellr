@@ -23,12 +23,13 @@ function Task(prop) {
             padding: 16,
             margin: '0 0 8px 0',
             minHeight: '50px',
+            maxWidth: "250px",
             backgroundColor: prop.snapshot.isDragging ? '#D5D5D5' : '#FFFFFF',
             color: 'black',
             ...prop.provided.draggableProps.style
         }} onClick={toggleEdit}>
         <div className='color-bar' style={{backgroundColor:prop.color}}></div>
-            <h3 style={{width:"250px"}}>{prop.item.content}</h3>
+            <h3 style={{maxWidth:"200px"}}>{prop.item.content}</h3>
 
            
             <User img={prop.item.assigned} date={prop.item.date}></User>
