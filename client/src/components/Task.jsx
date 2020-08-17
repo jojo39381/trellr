@@ -28,7 +28,7 @@ function Task(prop) {
         }} onClick={toggleEdit}>
         <div className='color-bar' style={{backgroundColor:prop.color}}></div>
             <h3>{prop.item.content}</h3>
-            
+
             <img className="task-img" src={prop.item.image} alt="haha"></img>
             <User img={prop.item.assigned} date={prop.item.date}></User>
             
