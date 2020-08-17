@@ -22,13 +22,16 @@ function AddScreen(prop) {
           ...prevNote,
           image: url
         }
-      })
+      }, addTask)
       console.log(task)
-      prop.addTask(prop.id, null, task)
+      
     }
   }, [url])
 
-
+    function addTask() {
+      prop.addTask(prop.id, null, task)
+    }
+ 
     function uploadImage() {
      
       const data = new FormData()
