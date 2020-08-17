@@ -244,7 +244,7 @@ function App() {
             
         </Header>
         <button onClick={toggleAdd} style={{width:"100px", height:"50px", margin:"20px", float:"left"}}>Add</button>
-        <h1  style={{width:"100px", height:"50px", margin:"20px", float:"right"}}>{weather.temp} &deg;C <br></br> {weather.weather}</h1>
+        <h1  style={{width:"150px", height:"50px", margin:"20px", float:"right"}}>{weather.temp} &deg;C <br></br> {weather.weather}</h1>
         <div style={{ display: 'flex', justifyContent: 'center', height: '100%'}}>
             <DragDropContext onDragEnd={result => dragEnd(result, columns, setColumns)}>
                 {Object.entries(columns).map(([id, column]) => {
