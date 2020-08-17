@@ -139,7 +139,7 @@ function App() {
             axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude + "&units=imperial&exclude=minutely,hourly,daily&appid=da9df0aa55c4c2692212c2669fa3e530")
         .then(response => {
             setWeather({
-                temp:response.data.current.temp + " \&#8457",
+                temp:response.data.current.temp,
                 weather:response.data.current.weather[0].main
             })
             
@@ -244,7 +244,7 @@ function App() {
             
         </Header>
         <button onClick={toggleAdd} style={{width:"100px", height:"50px", margin:"20px", float:"left"}}>Add</button>
-        <h1  style={{width:"100px", height:"50px", margin:"20px", float:"right"}}>{weather.temp}</h1>
+        <h1  style={{width:"100px", height:"50px", margin:"20px", float:"right"}}>{weather.temp}&deg;F</h1>
         <div style={{ display: 'flex', justifyContent: 'center', height: '100%'}}>
             <DragDropContext onDragEnd={result => dragEnd(result, columns, setColumns)}>
                 {Object.entries(columns).map(([id, column]) => {
