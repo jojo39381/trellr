@@ -20,11 +20,11 @@ function AddScreen(prop) {
       setTask({
         ...task,
         image: url
-      }, function() {
+      }, () => {
         console.log("success")
         prop.addTask(prop.id, null, task)
       })
-      console.log(task)
+     
       
     }
   }, [url])
