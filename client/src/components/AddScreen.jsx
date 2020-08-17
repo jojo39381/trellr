@@ -1,20 +1,54 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 
 function AddScreen(prop) {
 
-  
-    function addTask() {
-     
+  useEffect(() => {
+    if (url) {
+      setTask(prevNote => {
+        return {
+          ...prevNote,
+          image: url
+        }
+      })
+
+      prop.addTask(prop.id, null, task)
+    }
+  }, [url])
+
+
+    function uploadImage() {
+      const data = new FormData()
+      data.append("file",image)
+      data.append("upload_preset","instaclone")
+      data.append("cloud_name","jojo39381")
+      fetch("https://api.cloudinary.com/v1_1/jojo39381/image/upload",{
+          method:"post",
+          body:data
+      })
+      .then(res=>res.json())
+      .then(data=>{
+         setUrl(data.url)
+      })
+      .catch(err=>{
+          console.log(err)
+      })
+
         prop.addTask(prop.id, null, task)
+
         
     }
 
     const [task, setTask] = useState({
         title: "",
-        date: ""
+        date: "",
+        image: ""
       });
     
+     const [image,setImage] = useState("")
+
+    
+     const [url,setUrl] = useState("")
       function handleChange(event) {
           
         const { name, value } = event.target;
@@ -41,7 +75,17 @@ function AddScreen(prop) {
         <input type="text" placeholder='Due Date...format ex: Dec 02' onChange={handleChange} value={task.date} name='date'>
 
         </input>
-        <button style={{width: '30%', border:'none', backgroundColor:'#f1c40f', height: '30px', borderRadius:'2px'}} onClick={addTask}>Add</button>
+        <div className="file-field input-field">
+            <div className="btn #64b5f6 blue darken-1">
+                <span>Uplaod Image</span>
+                <input type="file" onChange={(e)=>setImage(e.target.files[0])} />
+            </div>
+            <div className="file-path-wrapper">
+                <input className="file-path validate" type="text" />
+            </div>
+            </div>
+
+        <button style={{width: '30%', border:'none', backgroundColor:'#f1c40f', height: '30px', borderRadius:'2px'}} onClick={uploadImage}>Add</button>
     </div>
     </div>
     )

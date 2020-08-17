@@ -10,7 +10,9 @@ const exerciseSchema = new Schema({
         content: {type: String},
         assigned: {type: String},
         date: {type: String},
-        color: {type: String}}]
+        color: {type: String},
+        image: {type: String}
+    }]
     
 })
 
