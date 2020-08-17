@@ -31,7 +31,7 @@ function AddScreen(prop) {
     }
  
     function uploadImage() {
-     
+     if (image) {
       const data = new FormData()
       data.append("file",image)
       data.append("upload_preset","instaclone")
@@ -47,7 +47,10 @@ function AddScreen(prop) {
       .catch(err=>{
           console.log(err)
       })
-
+     }
+     else {
+       addTask()
+     }
         
         
     }

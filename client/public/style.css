@@ -32,12 +32,13 @@ body {
     text-align: center;
     width: 100px;
     margin-left:20px;
+    
     vertical-align:middle;
     color: gray;
 }
 .task-img {
     background-size: contain;
-    
+
     position: absolute;
 }
 header {

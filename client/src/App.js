@@ -20,19 +20,7 @@ function getRandomColor() {
 const columnsFromServer = 
     {   [uuid()] : {
             name: 'Backlog',
-            items: []
-        },
-        [uuid()]: {
-            name: 'Ready To Do',
-            items: []
-        },
-        [uuid()]: {
-            name: 'In Progress',
-            items: []
-        },
-        [uuid()]: {
-            name: 'Done',
-            items:[]
+            items: [{id: uuid(), content: "asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas asdasdas ", assigned:imageUrl + uuid(), date: "as", color: getRandomColor(), image: ""}]
         }
     };
 
@@ -110,7 +98,7 @@ function App() {
     
 
     
-    const [columns, setColumns] = useState({});
+    const [columns, setColumns] = useState(columnsFromServer);
     const [toggle, setToggle] = useState(false)
     useEffect(() => {
         const col = {
