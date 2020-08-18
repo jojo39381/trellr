@@ -135,7 +135,7 @@ function App() {
         console.log("asd")
         axios.get("/weather")
         .then(response => {
-            console.log(response.data)
+            console.log(response.data.weather)
             // setWeather({
             //     weather: response.data.
             // })
