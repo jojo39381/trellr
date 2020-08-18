@@ -214,22 +214,31 @@ function App() {
 
     function addColumn(name){
         
-        const data = {
-            id: uuid(),
-            category: name,
-            tasks:[]
-        }
+        // const data = {
+        //     id: uuid(),
+        //     category: name,
+        //     tasks:[]
+        // }
         
-        axios.post("/exercises/add", data)
-        .then(res => console.log(res.data))
-        setColumns({
-            ...columns,
-            [uuid()]: {
-              name: name,
-              items: []
-            }
-          });
-        setToggle(false)
+        // axios.post("/exercises/add", data)
+        // .then(res => console.log(res.data))
+        // setColumns({
+        //     ...columns,
+        //     [uuid()]: {
+        //       name: name,
+        //       items: []
+        //     }
+        //   });
+        // setToggle(false)
+        const data = {
+            title: "",
+            description: "",
+            url: ""
+        }
+        axios.post("/upload", data)
+        .then(res => {
+            console.log(res.data)
+        })
     }
 
 
