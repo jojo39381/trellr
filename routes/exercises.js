@@ -1,6 +1,6 @@
 const router = require('express').Router();
 let Exercise = require('../models/exercise.model');
-import axios from 'axios';
+let axios = require('axios');
 router.route('/').get((req, res) => {
   Exercise.find()
     .then(exercises => res.json(exercises))
