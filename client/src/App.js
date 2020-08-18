@@ -138,6 +138,8 @@ function App() {
             console.log(response.data)
             setWeather(response.data)
         })
+
+        console.log("yes")
         
 
 
