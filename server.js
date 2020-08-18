@@ -27,6 +27,7 @@ connection.once('open', () => {
 })
 
 
+
 const oAuth = youtube.authenticate({
     type:'oauth',
     client_id:credentials.web.client_id,
