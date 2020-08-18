@@ -27,6 +27,7 @@ const usersRouter = require('./routes/users');
 
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
+
 if (process.env.NODE_ENV === "production") {
 
     
