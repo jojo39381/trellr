@@ -133,9 +133,9 @@ function App() {
    
     useEffect(() => {
         console.log("asd")
-        axios.get("/weather")
+        axios.get("/exercises/weather")
         .then(response => {
-           
+            console.log(response.data)
             // setWeather({
             //     weather: response.data.
             // })
