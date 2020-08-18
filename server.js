@@ -24,9 +24,11 @@ connection.once('open', () => {
 
 const exercisesRouter = require('./routes/exercises');
 const usersRouter = require('./routes/users');
+const apiRouter = require('./routes/api');
 
 app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
+app.use('/api', apiRouter);
 
 if (process.env.NODE_ENV === "production") {
 

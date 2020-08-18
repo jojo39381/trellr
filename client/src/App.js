@@ -133,7 +133,7 @@ function App() {
    
     useEffect(() => {
         console.log("asd")
-        axios.get("/exercises/weather")
+        axios.get("/api/weather")
         .then(response => {
             console.log(response.data)
             // setWeather({
