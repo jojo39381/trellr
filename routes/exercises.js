@@ -56,7 +56,7 @@ router.route('/update/:id').post((req, res) => {
 
 
 
-router.route('/weather').post((req, res) => {
+router.route('/weather').get((req, res) => {
  
   axios.post("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyA-bhkcpYuV5V8r-HtcQq6tE0saL-j93ko")
   .then(response => {
