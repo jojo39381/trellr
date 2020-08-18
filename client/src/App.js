@@ -136,9 +136,7 @@ function App() {
         axios.get("/api/weather")
         .then(response => {
             console.log(response.data)
-            setWeather({
-                weather: response.data
-            })
+            setWeather(response.data)
         })
         
 
