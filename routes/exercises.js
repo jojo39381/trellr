@@ -67,6 +67,7 @@ router.route('/weather').get((req, res) => {
             weather:response.data.current.weather[0].main
             
           }
+          console.log(weather)
           res.json(weather)
           
       })
