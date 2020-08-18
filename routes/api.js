@@ -18,3 +18,5 @@ router.route('/weather').get((req, res) => {
         
     })
   })
+
+  module.exports = router;
