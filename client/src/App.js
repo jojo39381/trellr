@@ -6,6 +6,7 @@ import Header from './components/Header.jsx';
 import axios from 'axios';
 import AddColumn from './components/AddColumn.js';
 
+
 /* random image */
 const imageUrl = 'https://source.unsplash.com/random/?people/';
 
